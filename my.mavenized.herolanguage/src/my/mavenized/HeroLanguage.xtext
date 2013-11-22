@@ -1,0 +1,13 @@
+grammar my.mavenized.HeroLanguage with org.eclipse.xtext.xbase.Xbase
+
+generate heroLanguage "http://www.mavenized.my/HeroLanguage"
+
+Heros:
+	heros+=SuperHero*;
+	
+SuperHero:
+	'hero' name=ID 'can' abilities+=Ability (someCode=XBlockExpression)?;
+	
+enum Ability :
+	FLY | SUPERPOWER | FIRE | ICE
+;
