@@ -30,7 +30,18 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
 		</repository>
+		
+        <repository>
+          <id>central snapshots</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
 	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<build>
 		<plugins>
