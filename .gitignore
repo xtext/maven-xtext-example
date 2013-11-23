@@ -1,5 +1,7 @@
 bin
 target
+generated
 generated-sources
 src-gen
 xtend-gen
+.DS_Store
