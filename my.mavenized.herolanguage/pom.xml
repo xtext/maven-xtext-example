@@ -16,56 +16,52 @@
 
 	<build>
 		<plugins>
-			        <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-clean-plugin</artifactId>
-                  <version>2.5</version>
-                  <configuration>
-                          <filesets>
-                                  <fileset>
-                                          <directory>${basedir}/src-gen</directory>
-                                  </fileset>
-                                  <fileset>
-                                          <directory>${basedir}/xtend-gen</directory>
-                                  </fileset>
-                                  <!-- clean ui plugin as well -->
-                                  <fileset>
-                                          <directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
-                                  </fileset>
-                                  <fileset>
-                                          <directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
-                                  </fileset>
-                                  <!-- clean test fragment as well -->
-                                  <fileset>
-                                          <directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
-                                  </fileset>
-                                  <fileset>
-                                          <directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
-                                  </fileset>
-                          </filesets>
-                  </configuration>
-                  </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}/src-gen</directory>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/xtend-gen</directory>
+						</fileset>
+						<!-- clean ui plugin as well -->
+						<fileset>
+							<directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+						</fileset>
+						<!-- clean test fragment as well -->
+						<fileset>
+							<directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+						</fileset>
+						<fileset>
+							<directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
 
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
+				<groupId>org.fornax.toolsupport</groupId>
+				<artifactId>fornax-oaw-m2-plugin</artifactId>
+				<version>3.4.0</version>
 				<executions>
 					<execution>
+						<id>generate-language-artifacts</id>
 						<phase>generate-sources</phase>
 						<goals>
-							<goal>java</goal>
+							<goal>run-workflow</goal>
 						</goals>
+						<configuration>
+							<workflowDescriptor>src/my/mavenized/GenerateHeroLanguage.mwe2</workflowDescriptor>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<includeProjectDependencies>false</includeProjectDependencies>
-					<includePluginDependencies>true</includePluginDependencies>
-					<mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
-					<arguments>
-						<argument>${project.basedir}/src/my/mavenized/GenerateHeroLanguage.mwe2</argument>
-					</arguments>
-				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>org.eclipse.xtext</groupId>
@@ -79,5 +75,41 @@
 				<artifactId>xtend-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.fornax.toolsupport
+										</groupId>
+										<artifactId>
+											fornax-oaw-m2-plugin
+										</artifactId>
+										<versionRange>
+											[3.4.0,)
+										</versionRange>
+										<goals>
+											<goal>run-workflow</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute>
+											<runOnIncremental>false</runOnIncremental>
+										</execute>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>
