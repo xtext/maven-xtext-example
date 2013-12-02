@@ -11,6 +11,8 @@
 		<module>../my.mavenized.herolanguage.tests</module>
 		<module>../my.mavenized.herolanguage.sdk</module>
 		<module>../my.mavenized.herolanguage.updatesite</module>
+		
+		<module>../example-standalone-usage</module>
 	</modules>
 
 	<properties>
