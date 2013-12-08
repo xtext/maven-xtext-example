@@ -39,3 +39,14 @@ Steps:
  cd ../example-project/
  mvn clean install
 ```
+
+Noteworthy changes to make manually to your grammar created by the Xtext Wizard
+===============================================================================
+
+At least if you are migrating from a pre-2.5 grammar (unclear if in v2.5 this will be OOB),
+please note that you'll have to change the grammarURI in your resp. Generate*.mwe2
+from classpath:/ to platform:/ - as per the example GenerateHeroLanguage.mwe2,
+otherwise you'll hit:
+
+   ERROR mf.mwe2.launch.runtime.Mwe2Launcher  - Problems instantiating module ...Generate*
+   Caused by: org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/.../*.xtext'
