@@ -19,28 +19,63 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-				<version>2.5</version>
 				<configuration>
-					<filesets>
+					<filesets combine.children="append">
 						<fileset>
 							<directory>${basedir}/src-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 						<fileset>
 							<directory>${basedir}/xtend-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 						<!-- clean ui plugin as well -->
 						<fileset>
 							<directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 						<fileset>
 							<directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 						<!-- clean test fragment as well -->
 						<fileset>
 							<directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 						<fileset>
 							<directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+							<includes>
+								<include>**</include>
+							</includes>
+							<excludes>
+								<exclude>.gitempty</exclude>
+							</excludes>
 						</fileset>
 					</filesets>
 				</configuration>
