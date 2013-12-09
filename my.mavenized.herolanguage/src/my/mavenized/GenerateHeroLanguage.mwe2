@@ -37,6 +37,7 @@ Workflow {
     
     component = DirectoryCleaner {
     	directory = "${runtimeProject}/src-gen"
+    	exclude = ".gitempty"
     }
     
     component = DirectoryCleaner {
@@ -45,10 +46,12 @@ Workflow {
     
     component = DirectoryCleaner {
     	directory = "${runtimeProject}.ui/src-gen"
+    	exclude = ".gitempty"
     }
     
     component = DirectoryCleaner {
     	directory = "${runtimeProject}.tests/src-gen"
+    	exclude = ".gitempty"
     }
     
     component = Generator {
