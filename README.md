@@ -1,8 +1,6 @@
 An Xtext Language Built with Maven
 ==================================
 
-**!!! This is based on the latest SNAPSHOTS of the upcoming Xtext 2.5 release. To be released on December 11 !!!**
-
 A small example to show how to configure a Maven build for an Xtext language. It includes:
 
 Language Example (my.mavenized.herolanguage)

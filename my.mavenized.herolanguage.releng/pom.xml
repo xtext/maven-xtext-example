@@ -16,7 +16,7 @@
 	<properties>
 		<tycho-version>0.19.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext.version>2.5.0-SNAPSHOT</xtext.version>
+		<xtext.version>2.5.0</xtext.version>
 	</properties>
 
 	<repositories>
@@ -26,23 +26,11 @@
 			<url>http://download.eclipse.org/releases/kepler</url>
 		</repository>
 		<repository>
-			<id>Xtext bleeding edge</id>
+			<id>Xtext Update Site</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
 		</repository>
-		
-        <repository>
-          <id>central snapshots</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>central snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</pluginRepository>
-	</pluginRepositories>
-
 	<build>
 		<pluginManagement>
 			<plugins>
