@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <relativePath>../my.mavenized.herolanguage.releng/pom.xml</relativePath>
-    <groupId>my.mavenized.herolanguage</groupId>
-    <artifactId>parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<relativePath>../my.mavenized.herolanguage.releng/pom.xml</relativePath>
+		<groupId>my.mavenized.herolanguage</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>my.mavenized.herolanguage.tests</artifactId>
-  <packaging>eclipse-test-plugin</packaging>
+	<artifactId>my.mavenized.herolanguage.tests</artifactId>
+	<packaging>eclipse-test-plugin</packaging>
 
-  <name>My Hero Language Tests</name>
+	<name>My Hero Language Tests</name>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.xtend</groupId>
-        <artifactId>xtend-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-surefire-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <configuration>
-          <useUIHarness>false</useUIHarness>
-          <useUIThread>false</useUIThread>
-        </configuration>
-      </plugin>
-        </plugins>
-  </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>gen-clean</id>
+						<phase>clean</phase>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<useUIHarness>false</useUIHarness>
+					<useUIThread>false</useUIThread>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
