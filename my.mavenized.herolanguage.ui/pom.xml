@@ -16,6 +16,14 @@
   
   <build>
   	<plugins>
+		<!-- Do not clean the src-gen folder, therefore we remove all paths from 
+			the default configuration in the parent pom. Note the combine.self="override" 
+			statement -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-clean-plugin</artifactId>
+			<configuration combine.self="override" />
+		</plugin>
   		<plugin>
   			<groupId>org.eclipse.xtend</groupId>
 			<artifactId>xtend-maven-plugin</artifactId>
