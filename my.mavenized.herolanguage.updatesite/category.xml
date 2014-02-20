@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/my.mavenized.herolanguage.sdk_1.0.0.qualifier.jar" id="my.mavenized.herolanguage.sdk" version="1.0.0.qualifier">
+   <feature url="features/my.mavenized.herolanguage.sdk_0.0.0.jar" id="my.mavenized.herolanguage.sdk" version="0.0.0">
       <category name="my.mavenized.herolanguage"/>
    </feature>
    <category-def name="my.mavenized.herolanguage" label="Hero Language"/>
