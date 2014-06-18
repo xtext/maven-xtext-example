@@ -1,9 +1,5 @@
-//outlet.DEFAULT_OUTPUT.sourceFolder.src/main/generated-sources/xtend.directory=src/main/generated-sources/xtend
-//outlet.DEFAULT_OUTPUT.sourceFolder.src/main/generated-sources/xtend.ignore=false
-//outlet.DEFAULT_OUTPUT.sourceFolder.src/main/java.directory=src/main/generated-sources/xtend
+//outlet.DEFAULT_OUTPUT.sourceFolder.src/main/java.directory=Applications/xcon-eclipse/Eclipse.app/Contents/MacOS/xtend-gen
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/main/java.ignore=false
-//outlet.DEFAULT_OUTPUT.sourceFolder.src/test/generated-sources/xtend.directory=src/main/generated-sources/xtend
-//outlet.DEFAULT_OUTPUT.sourceFolder.src/test/generated-sources/xtend.ignore=false
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/test/java.directory=src/test/generated-sources/xtend
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/test/java.ignore=false
 autobuilding=true
