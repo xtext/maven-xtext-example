@@ -23,6 +23,23 @@
 					<execution>
 						<id>gen-clean</id>
 						<phase>clean</phase>
+						<!-- Clean up generated files in all projects -->
+						<configuration>
+							<filesets combine.children="append">
+								<fileset>
+									<directory>${basedir}/src-gen/</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/model/generated/</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.ui/src-gen/</directory>
+								</fileset>
+								<fileset>
+									<directory>${basedir}/../${project.artifactId}.tests/src-gen/</directory>
+								</fileset>
+							</filesets>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -73,7 +90,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

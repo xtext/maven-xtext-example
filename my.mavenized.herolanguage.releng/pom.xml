@@ -69,9 +69,6 @@
 							<configuration>
 								<filesets>
 									<fileset>
-										<directory>${basedir}/src-gen</directory>
-									</fileset>
-									<fileset>
 										<directory>${basedir}/xtend-gen</directory>
 									</fileset>
 								</filesets>

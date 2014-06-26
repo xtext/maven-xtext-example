@@ -85,9 +85,8 @@ Workflow {
     
     		// The antlr parser generator fragment.
     		fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
-    		//  options = {
-    		//      backtrack = true
-    		//  }
+    			// For the very slow servers
+    			antlrParam = "-Xconversiontimeout" antlrParam = "5000"
     		}
     
     		// Xtend-based API for validation
