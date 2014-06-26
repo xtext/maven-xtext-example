@@ -37,3 +37,8 @@ Steps:
  cd ../example-project/
  mvn clean install
 ```
+
+Builds:
+=======
+
+https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/
