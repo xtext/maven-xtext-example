@@ -41,4 +41,6 @@ Steps:
 Builds:
 =======
 
+We now have automatic builds:
+
 https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/
