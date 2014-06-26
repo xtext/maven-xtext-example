@@ -1,3 +1,5 @@
+[![Build Status](https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/badge/icon)](https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/)
+
 An Xtext Language Built with Maven
 ==================================
 
