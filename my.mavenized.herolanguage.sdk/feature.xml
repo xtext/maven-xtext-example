@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feature id="my.mavenized.herolanguage.sdk"
-	label="HeroLanguage SDK Feature "
-	version="1.0.0.qualifier">
-	<plugin
-			id="my.mavenized.herolanguage"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
-	<plugin
-			id="my.mavenized.herolanguage.ui"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
+<feature
+      id="my.mavenized.herolanguage.sdk"
+      label="HeroLanguage SDK Feature "
+      version="1.0.0.qualifier">
+
+   <requires>
+      <import feature="org.eclipse.xtext.runtime" version="2.8.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="my.mavenized.herolanguage"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="my.mavenized.herolanguage.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

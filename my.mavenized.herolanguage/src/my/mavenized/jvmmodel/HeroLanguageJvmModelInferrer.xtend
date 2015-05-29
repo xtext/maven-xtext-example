@@ -8,15 +8,15 @@ import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
- *
+ * 
  * <p>The JVM model should contain all elements that would appear in the Java code 
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class HeroLanguageJvmModelInferrer extends AbstractModelInferrer {
 
-    /**
-     * convenience API to build and initialize JVM types and their members.
-     */
+	/**
+	 * convenience API to build and initialize JVM types and their members.
+	 */
 	@Inject extension JvmTypesBuilder
 
 	/**
@@ -44,15 +44,14 @@ class HeroLanguageJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-   	def dispatch void infer(Heros element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(Heros element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		for (hero : element.heros) {
-	   		acceptor.accept(element.toClass("my.company."+hero.name))
-	   			.initializeLater([
-	   				members += hero.toMethod("hello" + hero.name, hero.newTypeRef(typeof(String))) [
-   						body = hero.someCode
-   					]
-	   			])
-		}   		
-   	}
+			acceptor.accept(element.toClass("my.company." + hero.name)) [
+				members += hero.toMethod("hello" + hero.name, inferredType) [
+					body = hero.someCode
+				]
+			]
+		}
+	}
 }
 
