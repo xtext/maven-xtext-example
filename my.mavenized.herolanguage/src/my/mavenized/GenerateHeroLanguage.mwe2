@@ -27,7 +27,13 @@ Workflow {
     		from = "platform:/resource/org.eclipse.xtext.common.types/"
     		to = "classpath:/"
     	}
-    	
+
+    	// for builds without .project file
+    	projectMapping = {
+		projectName = '${projectName}' 
+		path = '${runtimeProject}'
+	}
+
     	// register current projects and its siblings for platform URI map, as they are not on the classpath.
     	platformUri = "${runtimeProject}/.."
     	// The following two lines can be removed, if Xbase is not used.
