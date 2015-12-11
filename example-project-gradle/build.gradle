@@ -1,0 +1,34 @@
+
+plugins {
+  id "eclipse"
+  id "org.xtext.xtend" version "1.0.0-RC1"
+  id "org.xtext.builder" version "1.0.0-RC1"
+}
+
+repositories {
+    mavenLocal() // This is required so that the herolanguage (which you previously 'mvn install' using Tycho) is found  
+    jcenter()
+}
+
+dependencies {
+    xtextLanguages 'my.mavenized.herolanguage:my.mavenized.herolanguage:1.0.0-SNAPSHOT'
+
+    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.9.0'
+    testCompile 'junit:junit:4.12'
+}
+
+xtext {
+    languages {
+        herolang {
+            fileExtension = 'hero'
+            setup = 'my.mavenized.HeroLanguageStandaloneSetup'
+            generator.outlet.producesJava = true
+        }
+    }
+
+    sourceSets {
+        main {
+            srcDir 'src/main/heroes'
+        }
+    }
+}
