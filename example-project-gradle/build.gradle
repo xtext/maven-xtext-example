@@ -1,8 +1,8 @@
 
 plugins {
   id "eclipse"
-  id "org.xtext.xtend" version "1.0.0-RC1"
-  id "org.xtext.builder" version "1.0.0-RC1"
+  id "org.xtext.xtend" version "1.0.0"
+  id "org.xtext.builder" version "1.0.0"
 }
 
 repositories {
