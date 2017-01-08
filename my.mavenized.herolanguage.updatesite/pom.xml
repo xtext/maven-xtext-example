@@ -5,7 +5,7 @@
   <parent>
     <relativePath>../my.mavenized.herolanguage.releng/pom.xml</relativePath>
     <groupId>my.mavenized.herolanguage</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>releng</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 

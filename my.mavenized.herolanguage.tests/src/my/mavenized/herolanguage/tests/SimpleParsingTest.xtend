@@ -2,7 +2,7 @@ package my.mavenized.herolanguage.tests
 
 import com.google.inject.Inject
 import my.mavenized.HeroLanguageInjectorProvider
-import my.mavenized.heroLanguage.Heros
+import my.mavenized.herolanguage.Heros
 import org.eclipse.xtext.junit4.InjectWith
 import org.eclipse.xtext.junit4.XtextRunner
 import org.eclipse.xtext.junit4.util.ParseHelper

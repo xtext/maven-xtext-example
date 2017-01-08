@@ -1,6 +1,6 @@
 grammar my.mavenized.HeroLanguage with org.eclipse.xtext.xbase.Xbase
 
-generate heroLanguage "http://www.mavenized.my/HeroLanguage"
+generate herolanguage "http://www.mavenized.my/HeroLanguage"
 
 Heros:
 	heros+=SuperHero*;
