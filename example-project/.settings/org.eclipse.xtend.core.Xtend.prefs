@@ -6,6 +6,7 @@
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/test/generated-sources/xtend.ignore=true
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/test/java.directory=src/test/generated-sources/xtend
 //outlet.DEFAULT_OUTPUT.sourceFolder.src/test/java.ignore=false
+BuilderConfiguration.is_project_specific=true
 autobuilding=true
 eclipse.preferences.version=1
 is_project_specific=true
