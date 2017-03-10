@@ -18,13 +18,13 @@ Require-Bundle: my.mavenized.herolanguage;visibility:=reexport,
  org.eclipse.compare,
  org.eclipse.xtext.xbase.ui,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.jdt.debug.ui
+ org.eclipse.jdt.debug.ui,
+ org.eclipse.xtend.lib;resolution:=optional,
+ my.mavenized.herolanguage.ide
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: my.mavenized.ui.quickfix,
  my.mavenized.ui.contentassist,
- my.mavenized.ui.contentassist.antlr,
- my.mavenized.ui.internal,
- my.mavenized.ui.contentassist.antlr.internal
-Bundle-Activator: my.mavenized.ui.internal.HeroLanguageActivator
+ my.mavenized.herolanguage.ui.internal
+Bundle-Activator: my.mavenized.herolanguage.ui.internal.HerolanguageActivator
