@@ -9,14 +9,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>../my.mavenized.herolanguage</module>
-		<module>../my.mavenized.herolanguage.ide</module>
-		<module>../my.mavenized.herolanguage.ui</module>
-		<module>../my.mavenized.herolanguage.tests</module>
-		<module>../my.mavenized.herolanguage.sdk</module>
-		<module>../my.mavenized.herolanguage.updatesite</module>
+		<module>my.mavenized.herolanguage</module>
+		<module>my.mavenized.herolanguage.ide</module>
+		<module>my.mavenized.herolanguage.ui</module>
+		<module>my.mavenized.herolanguage.tests</module>
+		<module>my.mavenized.herolanguage.sdk</module>
+		<module>my.mavenized.herolanguage.updatesite</module>
 	</modules>
-
+	
 	<properties>
 		<tycho-version>0.26.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,13 +35,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext.version}/</url>
 		</repository>
 	</repositories>
+	
 	<build>
+		
 		<pluginManagement>
+			
 			<plugins>
+				
 				<!-- xtend-maven-plugin is in pluginManagement instead of in plugins 
 					so that it doesn't run before the exec-maven-plugin's *.mwe2 gen; this way 
 					we can list it after. -->
-
 				<plugin>
 					<groupId>org.eclipse.xtend</groupId>
 					<artifactId>xtend-maven-plugin</artifactId>
@@ -60,6 +63,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						<outputDirectory>xtend-gen</outputDirectory>
 					</configuration>
 				</plugin>
+			
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
@@ -80,16 +84,22 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						</execution>
 					</executions>
 				</plugin>
+				
 			</plugins>
+			
 		</pluginManagement>
 
 		<plugins>
+			
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			
 		</plugins>
+	
 	</build>
+	
 </project>

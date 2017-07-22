@@ -1,7 +1,7 @@
 package my.mavenized.jvmmodel
 
 import com.google.inject.Inject
-import my.mavenized.heroLanguage.Heros
+import my.mavenized.herolanguage.Heros
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder

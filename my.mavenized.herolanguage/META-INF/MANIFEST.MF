@@ -20,12 +20,12 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: my.mavenized.jvmmodel,
  my.mavenized.services,
  my.mavenized,
- my.mavenized.heroLanguage.impl,
- my.mavenized.heroLanguage.util,
+ my.mavenized.herolanguage.impl,
+ my.mavenized.herolanguage.util,
  my.mavenized.validation,
  my.mavenized.parser.antlr.internal,
  my.mavenized.serializer,
  my.mavenized.parser.antlr,
- my.mavenized.heroLanguage,
+ my.mavenized.herolanguage,
  my.mavenized.scoping
 Import-Package: org.apache.log4j

@@ -3,5 +3,5 @@
    <feature url="features/my.mavenized.herolanguage.sdk_0.0.0.jar" id="my.mavenized.herolanguage.sdk" version="0.0.0">
       <category name="my.mavenized.herolanguage"/>
    </feature>
-   <category-def name="my.mavenized.herolanguage" label="Hero Language"/>
+   <category-def name="my.mavenized.herolanguage" label="My Hero Language"/>
 </site>
