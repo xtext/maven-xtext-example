@@ -4,7 +4,7 @@
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package 
 			uri = "http://www.mavenized.my/HeroLanguage"
-			class = "my.mavenized.herolanguage.HeroLanguagePackage"
+			class = "my.mavenized.herolanguage.HerolanguagePackage"
 			genModel = "model/generated/HeroLanguage.genmodel" />
 	</extension>
 </plugin>

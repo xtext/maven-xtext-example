@@ -4,7 +4,7 @@
 package my.mavenized.tests
 
 import com.google.inject.Inject
-import my.mavenized.heroLanguage.Heros
+import my.mavenized.herolanguage.Heros
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
