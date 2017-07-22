@@ -6,14 +6,14 @@
 	<parent>
 		<relativePath>../my.mavenized.herolanguage.releng/pom.xml</relativePath>
 		<groupId>my.mavenized.herolanguage</groupId>
-		<artifactId>releng</artifactId>
+		<artifactId>parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>my.mavenized.herolanguage.ui</artifactId>
+	<artifactId>my.mavenized.herolanguage.ide</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<name>My Hero Language UI</name>
+	<name>My Hero Language Generic Ide</name>
 
 	<build>
 		<plugins>

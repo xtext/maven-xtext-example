@@ -10,6 +10,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 	<modules>
 		<module>../my.mavenized.herolanguage</module>
+		<module>../my.mavenized.herolanguage.ide</module>
 		<module>../my.mavenized.herolanguage.ui</module>
 		<module>../my.mavenized.herolanguage.tests</module>
 		<module>../my.mavenized.herolanguage.sdk</module>
@@ -17,16 +18,16 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	</modules>
 
 	<properties>
-		<tycho-version>0.24.0</tycho-version>
+		<tycho-version>0.26.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext.version>2.9.0</xtext.version>
+		<xtext.version>2.11.0</xtext.version>
 	</properties>
 
 	<repositories>
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/mars/201506241002/</url>
+			<url>http://download.eclipse.org/releases/neon/201612211000/</url>
 		</repository>
 		<repository>
 			<id>Xtext Update Site</id>
