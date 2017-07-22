@@ -36,7 +36,6 @@ Steps:
 ### 2. Build the language
 
 ```
- cd my.mavenized.herolanguage.releng/
  mvn clean install
 ```
 
@@ -58,3 +57,8 @@ Builds:
 We now have automatic builds:
 
 https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/
+
+Maven Archetype
+===============
+There is also a Maven Archetype available that automatically creates your new project based on this example: 
+https://github.com/fuinorg/emt-xtext-archetype

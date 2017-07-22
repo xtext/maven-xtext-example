@@ -1,3 +1,6 @@
+.*
+!/.gitignore
+!/.gitkeep
 bin/
 target/
 build/
@@ -7,4 +10,4 @@ generated-sources/
 src-gen/
 xtend-gen/
 .DS_Store
-
+*.xml_gen
