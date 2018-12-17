@@ -1,8 +1,8 @@
 
 plugins {
   id "eclipse"
-  id "org.xtext.xtend" version "1.0.21"
-  id "org.xtext.builder" version "1.0.21"
+  id "org.xtext.xtend" version "2.0.2"
+  id "org.xtext.builder" version "2.0.2"
 }
 
 repositories {
@@ -13,7 +13,7 @@ repositories {
 dependencies {
     xtextLanguages 'my.mavenized.herolanguage:my.mavenized.herolanguage:1.0.0-SNAPSHOT'
 
-    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.13.0'
+    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.16.0'
     testCompile 'junit:junit:4.12'
 }
 

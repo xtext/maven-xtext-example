@@ -462,7 +462,7 @@
 	</extension>
 	<extension point="org.eclipse.core.runtime.adapters">
 		<factory class="my.mavenized.ui.HeroLanguageExecutableExtensionFactory:org.eclipse.xtext.builder.smap.StratumBreakpointAdapterFactory"
-			adaptableType="org.eclipse.xtext.ui.editor.XtextEditor">
+			adaptableType="my.mavenized.ui.editor.HeroLanguageEditor">
 			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget"/>
 		</factory> 
 	</extension>
@@ -556,12 +556,18 @@
 			class="my.mavenized.ui.HeroLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="hero">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="my.mavenized.HeroLanguage.contenttype"
+			contentViewerId="my.mavenized.HeroLanguage.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="my.mavenized.HeroLanguage.compare.contentMergeViewers"
 			class="my.mavenized.ui.HeroLanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="hero" label="HeroLanguage Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="my.mavenized.HeroLanguage.contenttype"
+			contentMergeViewerId="my.mavenized.HeroLanguage.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="my.mavenized.HeroLanguage.editors.documentProviders"
