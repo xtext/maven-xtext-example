@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - oraclejdk8
+os:
+  - linux
+cache:
+  directories:
+  - $HOME/.gradle
+before_script:
+  - echo "MAVEN_OPTS='-Xmx512m'" > ~/.mavenrc
+script:
+  - mvn clean install
+  - cd example-project
+  - mvn clean install
+  - cd ../example-project-gradle
+  - ./gradlew clean build
