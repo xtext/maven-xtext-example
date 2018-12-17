@@ -56,7 +56,7 @@ Builds:
 
 We now have automatic builds:
 
-https://dhuebner.ci.cloudbees.com/job/maven-xtext-example/
+https://travis-ci.org/xtext/maven-xtext-example
 
 Maven Archetype
 ===============
