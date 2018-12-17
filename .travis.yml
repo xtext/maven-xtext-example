@@ -6,6 +6,7 @@ os:
 cache:
   directories:
   - $HOME/.gradle
+  - $HOME/.m2/repository
 before_script:
   - echo "MAVEN_OPTS='-Xmx512m'" > ~/.mavenrc
 script:

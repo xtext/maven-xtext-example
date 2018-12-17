@@ -7,9 +7,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: my.mavenized.ide.contentassist.antlr,
  my.mavenized.ide.contentassist.antlr.internal
-Require-Bundle: org.antlr.runtime,
+Require-Bundle: org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
  org.eclipse.xtext.xbase.lib,
  my.mavenized.herolanguage,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
-
+Automatic-Module-Name: my.mavenized.herolanguage.ide

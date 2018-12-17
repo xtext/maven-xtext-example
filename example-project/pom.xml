@@ -8,7 +8,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext-version>2.13.0</xtext-version>
+		<xtext-version>2.16.0</xtext-version>
 	</properties>
 
 	<dependencies>
