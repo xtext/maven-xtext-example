@@ -6,6 +6,7 @@ plugins {
 }
 
 repositories {
+    
     mavenLocal() // This is required so that the herolanguage (which you previously 'mvn install' using Tycho) is found  
     jcenter()
 }
@@ -16,6 +17,9 @@ dependencies {
     compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.16.0'
     testCompile 'junit:junit:4.12'
 }
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 xtext {
     languages {
