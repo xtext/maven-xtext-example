@@ -71,19 +71,3 @@ Even if if the specified version (see pom) is available on the central maven rep
 
 * ```mvn clean install -U```
 
-## 2. Tests Fail
-
-The build is working properly until it reaches the tests. 
-
-```
-[INFO] parent 1.0.0-SNAPSHOT .............................. SUCCESS [  2.506 s]
-[INFO] My Hero Language Core .............................. SUCCESS [ 49.484 s]
-[INFO] My Hero Language Generic Ide ....................... SUCCESS [  2.437 s]
-[INFO] My Hero Language UI ................................ SUCCESS [  1.816 s]
-[INFO] My Hero Language Tests ............................. FAILURE [  4.883 s]
-[INFO] My Hero Language Feature ........................... SKIPPED
-[INFO] My Hero Language Update Site 1.0.0-SNAPSHOT ........ SKIPPED
-```
-This is because you use JDK 9 or higher. Xtext is currently not supporting JDK 9 and higher. Download JDK 8, set `JAVA_HOME` (Windows + Linux) accordingly and rerun the build.
-
-
