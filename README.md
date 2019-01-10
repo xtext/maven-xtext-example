@@ -58,3 +58,16 @@ https://travis-ci.org/xtext/maven-xtext-example
 
 There is also a Maven Archetype available that automatically creates your new project based on this example:
 https://github.com/fuinorg/emt-xtext-archetype
+
+# Known Issues
+
+## 1. Build fails due to version conflicts
+
+The build will fail immediately because of version conflicts. A possible error might look like or similar: 
+
+* ```No versions available for org.eclipse.emf:org.eclipse.emf.mwe2.runtime:jar:[2.9.1.201705291010] within specified range```
+
+Even if if the specified version (see pom) is available on the central maven repository. Updating related snapshots will most likely help the problem.
+
+* ```mvn clean install -U```
+
