@@ -63,7 +63,7 @@ https://github.com/fuinorg/emt-xtext-archetype
 
 ## 1. Build fails due to version conflicts
 
-The build will fail immediately because of version conflicts. A possible error might similar to the following: 
+The build will fail immediately because of version conflicts. A possible error might look similar to the following: 
 
 * ```No versions available for org.eclipse.emf:org.eclipse.emf.mwe2.runtime:jar:[2.9.1.201705291010] within specified range```
 
