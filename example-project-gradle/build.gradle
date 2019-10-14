@@ -14,8 +14,8 @@ repositories {
 dependencies {
     xtextLanguages 'my.mavenized.herolanguage:my.mavenized.herolanguage:1.0.0-SNAPSHOT'
 
-    compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.19.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'org.eclipse.xtend:org.eclipse.xtend.lib:2.19.0'
+    testImplementation 'junit:junit:4.12'
 }
 
 sourceCompatibility = '1.8'
