@@ -1,4 +1,5 @@
 language: java
+install: true
 jdk:
   - openjdk8
   - openjdk11
@@ -11,8 +12,8 @@ cache:
 before_script:
   - echo "MAVEN_OPTS='-Xmx512m'" > ~/.mavenrc
 script:
-  - mvn clean install
+  - mvn clean install -U
   - cd example-project
-  - mvn clean install
+  - mvn clean install -U
   - cd ../example-project-gradle
   - ./gradlew clean build
