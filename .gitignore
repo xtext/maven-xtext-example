@@ -1,6 +1,7 @@
 .*
 !/.gitignore
 !/.gitkeep
+!.github
 bin/
 target/
 build/

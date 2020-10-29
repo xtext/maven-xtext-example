@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/xtext/maven-xtext-example.svg?branch=master)](https://travis-ci.org/xtext/maven-xtext-example)
+[![Build Status](https://github.com/xtext/maven-xtext-example/workflows/Build/badge.svg?branch=master)](https://github.com/xtext/maven-xtext-example/actions?query=workflow%3ABuild)
 
 # An Xtext Language Built with Maven
 
@@ -52,7 +52,7 @@ Try it out!
 
 We now have automatic builds:
 
-https://travis-ci.org/xtext/maven-xtext-example
+https://github.com/xtext/maven-xtext-example/actions?query=workflow%3ABuild
 
 # Maven Archetype
 
