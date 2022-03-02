@@ -20,9 +20,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<tycho-version>1.6.0</tycho-version>
+		<tycho-version>2.7.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext.version>2.25.0</xtext.version>
+		<xtext.version>2.26.0</xtext.version>
 		<tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
 	</properties>
 
@@ -30,12 +30,17 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2021-03/</url>
+			<url>https://download.eclipse.org/releases/2022-03/</url>
 		</repository>
 		<repository>
 			<id>Xtext Update Site</id>
 			<layout>p2</layout>
 			<url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext.version}/</url>
+		</repository>
+		<repository>
+			<id>mwe</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/emft/mwe/updates/releases/2.12.2/</url>
 		</repository>
 	</repositories>
 	
