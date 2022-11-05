@@ -23,7 +23,7 @@ jobs:
             ~/.gradle
             !~/.m2/**/*mavenized*
             !~/.m2/**/*example*
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.target') }}
           restore-keys: ${{ runner.os }}-m2-
       - name: Build
         run: |
