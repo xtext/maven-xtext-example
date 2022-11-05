@@ -2,7 +2,7 @@ package my.hero
 
 import org.junit.Test
 import static org.junit.Assert.*
-import my.pack.Foo
+import my.pack.HelloHelper
 
 class SuperManTest {
 	
@@ -11,6 +11,6 @@ class SuperManTest {
 	}
 	
 	@Test def void testFoo() {
-		assertEquals("hello", new Foo().x)
+		assertEquals("Hello", new HelloHelper().hello)
 	}
 }

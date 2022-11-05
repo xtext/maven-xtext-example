@@ -1,4 +1,6 @@
 hero Superman can FLY {
-	println("Hello I can " +
+	println(
+		new my.pack.HelloHelper().hello +
+		" I can " +
 		my.pack.SuperHelper.process("fly!"))
 }

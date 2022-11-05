@@ -90,6 +90,14 @@
 								</outputConfiguration>
 							</outputConfigurations>
 						</language>
+						<language>
+							<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
+							<outputConfigurations>
+								<outputConfiguration>
+									<outputDirectory>src/main/generated-sources/xtend/</outputDirectory>
+								</outputConfiguration>
+							</outputConfigurations>
+						</language>
 					</languages>
 				</configuration>
 				<dependencies>
@@ -98,16 +106,13 @@
 						<artifactId>my.mavenized.herolanguage</artifactId>
 						<version>1.0.0-SNAPSHOT</version>
 					</dependency>
+					<dependency>
+						<groupId>org.eclipse.xtend</groupId>
+						<artifactId>org.eclipse.xtend.core</artifactId>
+						<version>${xtext-version}</version>
+					</dependency>
 				</dependencies>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>2.7.3</version>
-				<extensions>true</extensions>
-			</plugin>
-		-->
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
