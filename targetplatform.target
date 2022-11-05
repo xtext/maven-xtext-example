@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?>
-<target name="edelta.target" sequenceNumber="20">
+<target name="targetplatform.target" sequenceNumber="1">
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
