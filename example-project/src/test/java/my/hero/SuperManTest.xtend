@@ -7,7 +7,7 @@ import my.pack.Foo
 class SuperManTest {
 	
 	@Test def void testSimple() {
-		assertEquals("Hello I can fly!", new my.company.Superman().helloSuperman)
+		assertEquals("Hello I can FLY!", new my.company.Superman().helloSuperman)
 	}
 	
 	@Test def void testFoo() {
