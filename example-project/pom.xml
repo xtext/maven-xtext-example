@@ -104,7 +104,7 @@
 				<version>${xtext-version}</version>
 				<executions>
 					<execution>
-						<id>generate-main-sources</id>
+						<id>default</id>
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
@@ -125,18 +125,25 @@
 										</outputConfiguration>
 									</outputConfigurations>
 								</language>
-								<!-- The following is required because our Hero example file
-									refers to Xtend code -->
 								<language>
-									<!-- Xtend is already configured with separate output
-										folders for sources and tests -->
 									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<sourceMappings>
+												<sourceMapping>
+													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
+													<outputDirectory>${xtend-generated-test-sources}</outputDirectory>
+												</sourceMapping>
+											</sourceMappings>
+											<outputDirectory>${xtend-generated-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
 								</language>
 							</languages>
 						</configuration>
 					</execution>
 					<execution>
-						<id>generate-test-sources</id>
+						<id>default-test</id>
 						<goals>
 							<!-- default phase: generate-test-sources -->
 							<goal>testGenerate</goal>
@@ -145,6 +152,17 @@
 							<languages>
 								<language>
 									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<sourceMappings>
+												<sourceMapping>
+													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
+													<outputDirectory>${hero-generated-test-sources}</outputDirectory>
+												</sourceMapping>
+											</sourceMappings>
+											<outputDirectory>${hero-generated-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
 								</language>
 							</languages>
 						</configuration>
@@ -172,8 +190,6 @@
 				<executions>
 					<execution>
 						<goals>
-							<!-- default phase: generate-sources -->
-							<goal>compile</goal>
 							<!-- default phase: process-classes -->
 							<goal>xtend-install-debug-info</goal>
 							<!-- default phase: generate-test-sources -->
