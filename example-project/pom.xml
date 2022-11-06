@@ -11,9 +11,12 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<xtext-version>2.28.0</xtext-version>
-		<!-- Where Java files corresponding to the Hero DSL will be generated
+		<!-- Where Java files corresponding to the Hero DSL main files will be generated
 			by the xtext-maven-plugin -->
 		<hero-generated-sources>src/main/generated-sources/hero/</hero-generated-sources>
+		<!-- Where Java files corresponding to the Hero DSL test files will be generated
+			by the xtext-maven-plugin -->
+		<hero-generated-test-sources>src/test/generated-sources/hero/</hero-generated-test-sources>
 		<!-- This corresponds to the default value for xtend-maven-plugin compile goal  -->
 		<xtend-generated-sources>src/main/generated-sources/xtend/</xtend-generated-sources>
 		<!-- This corresponds to the default value for xtend-maven-plugin testCompile goal -->
@@ -60,6 +63,7 @@
 						<configuration>
 							<sources>
 								<source>${xtend-generated-test-sources}</source>
+								<source>${hero-generated-test-sources}</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -84,6 +88,9 @@
 									<directory>${xtend-generated-sources}</directory>
 								</fileset>
 								<fileset>
+									<directory>${hero-generated-test-sources}</directory>
+								</fileset>
+								<fileset>
 									<directory>${xtend-generated-test-sources}</directory>
 								</fileset>
 							</filesets>
@@ -97,34 +104,54 @@
 				<version>${xtext-version}</version>
 				<executions>
 					<execution>
+						<id>xtext-maven-generate</id>
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<languages>
+								<language>
+									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<outputDirectory>${hero-generated-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
+								</language>
+								<!-- The following is required because our Hero example file
+									refers to Xtend code -->
+								<language>
+									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<outputDirectory>${xtend-generated-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
+								</language>
+							</languages>
+						</configuration>
+					</execution>
+					<execution>
+						<id>xtext-maven-test-generate</id>
+						<goals>
+							<!-- default phase: generate-test-sources -->
+							<goal>testGenerate</goal>
+						</goals>
+						<configuration>
+							<languages>
+								<language>
+									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<outputDirectory>${hero-generated-test-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
+								</language>
+							</languages>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<languages>
-						<language>
-							<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
-							<outputConfigurations>
-								<outputConfiguration>
-									<outputDirectory>${hero-generated-sources}</outputDirectory>
-								</outputConfiguration>
-							</outputConfigurations>
-						</language>
-						<!-- The following is required because our Hero example file
-							refers to Xtend code -->
-						<language>
-							<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
-							<outputConfigurations>
-								<outputConfiguration>
-									<outputDirectory>${xtend-generated-sources}</outputDirectory>
-								</outputConfiguration>
-							</outputConfigurations>
-						</language>
-					</languages>
-				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>my.mavenized.herolanguage</groupId>
