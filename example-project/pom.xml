@@ -108,6 +108,8 @@
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
+							<!-- default phase: process-classes -->
+							<goal>install-debug-info</goal>
 						</goals>
 						<configuration>
 							<languages>
@@ -190,8 +192,6 @@
 				<executions>
 					<execution>
 						<goals>
-							<!-- default phase: process-classes -->
-							<goal>xtend-install-debug-info</goal>
 							<!-- default phase: generate-test-sources -->
 							<goal>testCompile</goal>
 							<!-- default phase: process-test-classes -->
