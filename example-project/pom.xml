@@ -104,11 +104,10 @@
 				<version>${xtext-version}</version>
 				<executions>
 					<execution>
+						<id>generate-main-sources</id>
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
-							<!-- default phase: generate-test-sources -->
-							<goal>testGenerate</goal>
 						</goals>
 						<configuration>
 							<languages>
@@ -132,6 +131,20 @@
 									<!-- Xtend is already configured with separate output
 										folders for sources and tests -->
 									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
+								</language>
+							</languages>
+						</configuration>
+					</execution>
+					<execution>
+						<id>generate-test-sources</id>
+						<goals>
+							<!-- default phase: generate-test-sources -->
+							<goal>testGenerate</goal>
+						</goals>
+						<configuration>
+							<languages>
+								<language>
+									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
 								</language>
 							</languages>
 						</configuration>
