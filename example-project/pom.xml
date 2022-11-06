@@ -104,12 +104,15 @@
 				<version>${xtext-version}</version>
 				<executions>
 					<execution>
-						<id>default</id>
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
 							<!-- default phase: process-classes -->
 							<goal>install-debug-info</goal>
+							<!-- default phase: generate-test-sources -->
+							<goal>testGenerate</goal>
+							<!-- default phase: process-test-classes -->
+							<goal>test-install-debug-info</goal>
 						</goals>
 						<configuration>
 							<languages>
@@ -127,6 +130,8 @@
 										</outputConfiguration>
 									</outputConfigurations>
 								</language>
+								<!-- The following is required because our Hero example file
+									refers to Xtend code -->
 								<language>
 									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
 									<outputConfigurations>
@@ -138,31 +143,6 @@
 												</sourceMapping>
 											</sourceMappings>
 											<outputDirectory>${xtend-generated-sources}</outputDirectory>
-										</outputConfiguration>
-									</outputConfigurations>
-								</language>
-							</languages>
-						</configuration>
-					</execution>
-					<execution>
-						<id>default-test</id>
-						<goals>
-							<!-- default phase: generate-test-sources -->
-							<goal>testGenerate</goal>
-						</goals>
-						<configuration>
-							<languages>
-								<language>
-									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
-									<outputConfigurations>
-										<outputConfiguration>
-											<sourceMappings>
-												<sourceMapping>
-													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
-													<outputDirectory>${hero-generated-test-sources}</outputDirectory>
-												</sourceMapping>
-											</sourceMappings>
-											<outputDirectory>${hero-generated-sources}</outputDirectory>
 										</outputConfiguration>
 									</outputConfigurations>
 								</language>
@@ -184,24 +164,6 @@
 						<version>${xtext-version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.xtend</groupId>
-				<artifactId>xtend-maven-plugin</artifactId>
-				<version>${xtext-version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<!-- default phase: generate-test-sources -->
-							<goal>testCompile</goal>
-							<!-- default phase: process-test-classes -->
-							<goal>xtend-test-install-debug-info</goal>
-						</goals>
-						<configuration>
-							<testOutputDirectory>${xtend-generated-test-sources}</testOutputDirectory>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
