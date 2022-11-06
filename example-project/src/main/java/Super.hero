@@ -1,6 +1,8 @@
 hero Superman can FLY {
 	println(
+		// we can refer to Xtend classes
 		new my.pack.HelloHelper().hello +
 		" I can " +
+		// we can refer to Java classes
 		my.pack.SuperHelper.process("fly!"))
 }
