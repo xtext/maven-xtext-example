@@ -104,37 +104,9 @@
 				<version>${xtext-version}</version>
 				<executions>
 					<execution>
-						<id>xtext-maven-generate</id>
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<languages>
-								<language>
-									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
-									<outputConfigurations>
-										<outputConfiguration>
-											<outputDirectory>${hero-generated-sources}</outputDirectory>
-										</outputConfiguration>
-									</outputConfigurations>
-								</language>
-								<!-- The following is required because our Hero example file
-									refers to Xtend code -->
-								<language>
-									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
-									<outputConfigurations>
-										<outputConfiguration>
-											<outputDirectory>${xtend-generated-sources}</outputDirectory>
-										</outputConfiguration>
-									</outputConfigurations>
-								</language>
-							</languages>
-						</configuration>
-					</execution>
-					<execution>
-						<id>xtext-maven-test-generate</id>
-						<goals>
 							<!-- default phase: generate-test-sources -->
 							<goal>testGenerate</goal>
 						</goals>
@@ -144,9 +116,22 @@
 									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
 									<outputConfigurations>
 										<outputConfiguration>
-											<outputDirectory>${hero-generated-test-sources}</outputDirectory>
+											<sourceMappings>
+												<sourceMapping>
+													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
+													<outputDirectory>${hero-generated-test-sources}</outputDirectory>
+												</sourceMapping>
+											</sourceMappings>
+											<outputDirectory>${hero-generated-sources}</outputDirectory>
 										</outputConfiguration>
 									</outputConfigurations>
+								</language>
+								<!-- The following is required because our Hero example file
+									refers to Xtend code -->
+								<language>
+									<!-- Xtend is already configured with separate output
+										folders for sources and tests -->
+									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
 								</language>
 							</languages>
 						</configuration>
