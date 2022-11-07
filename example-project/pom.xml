@@ -139,6 +139,10 @@
 							<!-- default phase: process-test-classes -->
 							<goal>xtend-test-install-debug-info</goal>
 						</goals>
+						<configuration>
+							<outputDirectory>${xtend-generated-sources}</outputDirectory>
+							<testOutputDirectory>${xtend-generated-test-sources}</testOutputDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

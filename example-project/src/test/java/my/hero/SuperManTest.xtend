@@ -1,6 +1,7 @@
 package my.hero
 
 import my.company.Superman
+import my.pack.Foo
 import org.junit.Test
 
 import static org.junit.Assert.*
@@ -12,4 +13,7 @@ class SuperManTest {
 			new Superman().helloSuperman)
 	}
 
+	@Test def void testFoo() {
+		assertEquals("hello", new Foo().x)
+	}
 }
