@@ -14,9 +14,6 @@
 		<!-- Where Java files corresponding to the Hero DSL main files will be generated
 			by the xtext-maven-plugin -->
 		<hero-generated-sources>src/main/generated-sources/hero/</hero-generated-sources>
-		<!-- Where Java files corresponding to the Hero DSL test files will be generated
-			by the xtext-maven-plugin -->
-		<hero-generated-test-sources>src/test/generated-sources/hero/</hero-generated-test-sources>
 		<!-- This corresponds to the default value for xtend-maven-plugin compile goal  -->
 		<xtend-generated-sources>src/main/generated-sources/xtend/</xtend-generated-sources>
 		<!-- This corresponds to the default value for xtend-maven-plugin testCompile goal -->
@@ -63,7 +60,6 @@
 						<configuration>
 							<sources>
 								<source>${xtend-generated-test-sources}</source>
-								<source>${hero-generated-test-sources}</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -88,9 +84,6 @@
 									<directory>${xtend-generated-sources}</directory>
 								</fileset>
 								<fileset>
-									<directory>${hero-generated-test-sources}</directory>
-								</fileset>
-								<fileset>
 									<directory>${xtend-generated-test-sources}</directory>
 								</fileset>
 							</filesets>
@@ -107,12 +100,6 @@
 						<goals>
 							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
-							<!-- default phase: process-classes -->
-							<goal>install-debug-info</goal>
-							<!-- default phase: generate-test-sources -->
-							<goal>testGenerate</goal>
-							<!-- default phase: process-test-classes -->
-							<goal>test-install-debug-info</goal>
 						</goals>
 						<configuration>
 							<languages>
@@ -120,29 +107,7 @@
 									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
 									<outputConfigurations>
 										<outputConfiguration>
-											<sourceMappings>
-												<sourceMapping>
-													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
-													<outputDirectory>${hero-generated-test-sources}</outputDirectory>
-												</sourceMapping>
-											</sourceMappings>
 											<outputDirectory>${hero-generated-sources}</outputDirectory>
-										</outputConfiguration>
-									</outputConfigurations>
-								</language>
-								<!-- The following is required because our Hero example file
-									refers to Xtend code -->
-								<language>
-									<setup>org.eclipse.xtend.core.XtendStandaloneSetup</setup>
-									<outputConfigurations>
-										<outputConfiguration>
-											<sourceMappings>
-												<sourceMapping>
-													<sourceFolder>${project.build.testSourceDirectory}</sourceFolder>
-													<outputDirectory>${xtend-generated-test-sources}</outputDirectory>
-												</sourceMapping>
-											</sourceMappings>
-											<outputDirectory>${xtend-generated-sources}</outputDirectory>
 										</outputConfiguration>
 									</outputConfigurations>
 								</language>
@@ -156,14 +121,26 @@
 						<artifactId>my.mavenized.herolanguage</artifactId>
 						<version>1.0.0-SNAPSHOT</version>
 					</dependency>
-					<!-- The following is required because our Hero example file
-						refers to Xtend code -->
-					<dependency>
-						<groupId>org.eclipse.xtend</groupId>
-						<artifactId>org.eclipse.xtend.core</artifactId>
-						<version>${xtext-version}</version>
-					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtext-version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<!-- default phase: generate-sources -->
+							<goal>compile</goal>
+							<!-- default phase: process-classes -->
+							<goal>xtend-install-debug-info</goal>
+							<!-- default phase: generate-test-sources -->
+							<goal>testCompile</goal>
+							<!-- default phase: process-test-classes -->
+							<goal>xtend-test-install-debug-info</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

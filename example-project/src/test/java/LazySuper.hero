@@ -1,3 +1,0 @@
-hero LazySuperman can FLY {
-	throw new UnsupportedOperationException("Sorry, I'm lazy! ;)")
-}
