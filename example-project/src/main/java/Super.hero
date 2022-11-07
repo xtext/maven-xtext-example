@@ -1,3 +1,6 @@
 hero Superman can FLY {
-	println("Hello I can fly!")
+	println(
+		"Hello I can " +
+		// we can refer to Java classes
+		my.pack.SuperHelper.process("fly!"))
 }

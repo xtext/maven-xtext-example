@@ -11,6 +11,13 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<xtext-version>2.28.0</xtext-version>
+		<!-- Where Java files corresponding to the Hero DSL main files will be generated
+			by the xtext-maven-plugin -->
+		<hero-generated-sources>src/main/generated-sources/hero/</hero-generated-sources>
+		<!-- This corresponds to the default value for xtend-maven-plugin compile goal  -->
+		<xtend-generated-sources>src/main/generated-sources/xtend/</xtend-generated-sources>
+		<!-- This corresponds to the default value for xtend-maven-plugin testCompile goal -->
+		<xtend-generated-test-sources>src/test/generated-sources/xtend/</xtend-generated-test-sources>
 	</properties>
 
 	<dependencies>
@@ -34,13 +41,25 @@
 				<version>1.8</version>
 				<executions>
 					<execution>
+						<id>add-sources</id>
 						<goals>
 							<goal>add-source</goal>
 						</goals>
 						<configuration>
 							<sources>
-								<source>src/main/generated-sources/xtend/</source>
-								<source>src/test/generated-sources/xtend/</source>
+								<source>${hero-generated-sources}</source>
+								<source>${xtend-generated-sources}</source>
+							</sources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>add-test-sources</id>
+						<goals>
+							<goal>add-test-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${xtend-generated-test-sources}</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -59,10 +78,13 @@
 						<configuration>
 							<filesets>
 								<fileset>
-									<directory>src/main/generated-sources/xtend/</directory>
+									<directory>${hero-generated-sources}</directory>
 								</fileset>
 								<fileset>
-									<directory>src/test/generated-sources/xtend/</directory>
+									<directory>${xtend-generated-sources}</directory>
+								</fileset>
+								<fileset>
+									<directory>${xtend-generated-test-sources}</directory>
 								</fileset>
 							</filesets>
 						</configuration>
@@ -76,22 +98,23 @@
 				<executions>
 					<execution>
 						<goals>
+							<!-- default phase: generate-sources -->
 							<goal>generate</goal>
 						</goals>
+						<configuration>
+							<languages>
+								<language>
+									<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
+									<outputConfigurations>
+										<outputConfiguration>
+											<outputDirectory>${hero-generated-sources}</outputDirectory>
+										</outputConfiguration>
+									</outputConfigurations>
+								</language>
+							</languages>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<languages>
-						<language>
-							<setup>my.mavenized.HeroLanguageStandaloneSetup</setup>
-							<outputConfigurations>
-								<outputConfiguration>
-									<outputDirectory>src/main/generated-sources/xtend/</outputDirectory>
-								</outputConfiguration>
-							</outputConfigurations>
-						</language>
-					</languages>
-				</configuration>
 				<dependencies>
 					<dependency>
 						<groupId>my.mavenized.herolanguage</groupId>
@@ -100,14 +123,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<!--
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>2.7.3</version>
-				<extensions>true</extensions>
-			</plugin>
-		-->
 			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
@@ -115,11 +130,19 @@
 				<executions>
 					<execution>
 						<goals>
+							<!-- default phase: generate-sources -->
 							<goal>compile</goal>
+							<!-- default phase: process-classes -->
 							<goal>xtend-install-debug-info</goal>
+							<!-- default phase: generate-test-sources -->
 							<goal>testCompile</goal>
+							<!-- default phase: process-test-classes -->
 							<goal>xtend-test-install-debug-info</goal>
 						</goals>
+						<configuration>
+							<outputDirectory>${xtend-generated-sources}</outputDirectory>
+							<testOutputDirectory>${xtend-generated-test-sources}</testOutputDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
