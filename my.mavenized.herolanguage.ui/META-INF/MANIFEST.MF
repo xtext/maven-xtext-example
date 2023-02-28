@@ -23,7 +23,7 @@ Require-Bundle: my.mavenized.herolanguage;visibility:=reexport,
  my.mavenized.herolanguage.ide
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: my.mavenized.ui.quickfix,
  my.mavenized.ui.contentassist,
  my.mavenized.herolanguage.ui.internal,
