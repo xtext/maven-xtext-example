@@ -1,7 +1,7 @@
 plugins {
   id "eclipse"
-  id "org.xtext.xtend" version "3.0.2"
-  id "org.xtext.builder" version "3.0.2"
+  id "org.xtext.xtend" version "4.0.0"
+  id "org.xtext.builder" version "4.0.0"
 }
 
 repositories {    
@@ -22,7 +22,7 @@ targetCompatibility = '11'
 xtext {
     languages {
         herolang {
-            fileExtension = 'hero'
+            fileExtensions = ['hero']
             setup = 'my.mavenized.HeroLanguageStandaloneSetup'
             generator.outlet.producesJava = true
         }
