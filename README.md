@@ -27,7 +27,7 @@ Try it out!
 ## 1. Increase memory
 
 ```bash
-   export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=256m"
+   export MAVEN_OPTS="-Xmx512m"
 ```
 
 ## 2. Build the language
