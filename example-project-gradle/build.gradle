@@ -12,7 +12,7 @@ repositories {
 dependencies {
     xtextLanguages 'my.mavenized.herolanguage:my.mavenized.herolanguage:1.0.0-SNAPSHOT'
 
-    implementation 'org.eclipse.xtend:org.eclipse.xtend.lib:2.32.0'
+    implementation 'org.eclipse.xtend:org.eclipse.xtend.lib:2.34.0'
     testImplementation 'junit:junit:4.12'
 }
 
