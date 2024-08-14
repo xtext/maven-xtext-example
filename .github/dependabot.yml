@@ -1,0 +1,34 @@
+version: 2
+updates:
+  # Maven project at the root
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+
+  # Maven project in the example-project directory
+  - package-ecosystem: "maven"
+    directory: "/example-project"
+    schedule:
+      interval: "weekly"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+
+  # Gradle project in the example-project-gradle directory
+  - package-ecosystem: "gradle"
+    directory: "/example-project-gradle"
+    schedule:
+      interval: "weekly"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+
+# Global settings
+update-type: "all"
