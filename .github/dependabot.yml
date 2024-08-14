@@ -29,6 +29,3 @@ updates:
       all-dependencies:
         patterns:
           - "*"
-
-# Global settings
-update-type: "all"
