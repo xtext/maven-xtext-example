@@ -15,6 +15,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
+      - name: Set up Maven 3.9.8
+        uses: stCarolas/setup-maven@v5
+        with:
+          maven-version: 3.9.8
       - name: Cache Maven, p2 and Gradle dependencies
         uses: actions/cache@v3
         with:
