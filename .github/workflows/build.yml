@@ -20,7 +20,7 @@ jobs:
         with:
           maven-version: 3.9.8
       - name: Cache Maven, p2 and Gradle dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.m2
