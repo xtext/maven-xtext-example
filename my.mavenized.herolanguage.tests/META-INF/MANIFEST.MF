@@ -8,7 +8,6 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: my.mavenized.herolanguage,
  my.mavenized.herolanguage.ui,
  org.eclipse.core.runtime,
- org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.lib;bundle-version="2.13.0",
  org.eclipse.xtend.lib,
  org.eclipse.ui.workbench;resolution:=optional,
