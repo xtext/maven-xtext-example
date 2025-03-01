@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: my.mavenized.herolanguage.ide
 Bundle-SymbolicName: my.mavenized.herolanguage.ide;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: my.mavenized.ide.contentassist.antlr,
  my.mavenized.ide.contentassist.antlr.internal
