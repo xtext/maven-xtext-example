@@ -20,9 +20,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
-		<tycho-version>4.0.12</tycho-version>
+		<tycho-version>4.0.13</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext.version>2.38.0</xtext.version>
+		<xtext.version>2.39.0</xtext.version>
 		<tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
 	</properties>
 
