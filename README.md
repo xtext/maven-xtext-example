@@ -65,7 +65,7 @@ https://github.com/fuinorg/emt-xtext-archetype
 
 The build will fail immediately because of version conflicts. A possible error might look similar to the following: 
 
-* ```No versions available for org.eclipse.emf:org.eclipse.emf.mwe2.runtime:jar:[2.9.1.201705291010] within specified range```
+* ```No versions available for org.eclipse.emf:org.eclipse.emf.mwe2.runtime:jar:[2.9.1.202105291010] within specified range```
 
 Even if the specified version (see pom) is available on the central maven repository, updating related snapshots will most likely help the problem.
 
