@@ -2,7 +2,7 @@ version: 2
 updates:
   # Maven project at the root
   - package-ecosystem: "maven"
-    directory: "/"
+    directories: "/"
     schedule:
       interval: "weekly"
     groups:
