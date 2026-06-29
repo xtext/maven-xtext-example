@@ -2,7 +2,8 @@ version: 2
 updates:
   # Maven project at the root
   - package-ecosystem: "maven"
-    directories: "/"
+    directories: 
+    - "/"
     schedule:
       interval: "weekly"
     groups:
@@ -12,7 +13,8 @@ updates:
 
   # Maven project in the example-project directory
   - package-ecosystem: "maven"
-    directory: "/example-project"
+    directories: 
+    - "/example-project"
     schedule:
       interval: "weekly"
     groups:
@@ -22,7 +24,8 @@ updates:
 
   # Gradle project in the example-project-gradle directory
   - package-ecosystem: "gradle"
-    directory: "/example-project-gradle"
+    directories: 
+    - "/example-project-gradle"
     schedule:
       interval: "weekly"
     groups:
@@ -30,6 +33,7 @@ updates:
         patterns:
           - "*"
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directories: 
+    - "/"
     schedule:
       interval: "weekly"
