@@ -10,7 +10,7 @@
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtext-version>2.43.0</xtext-version>
+		<xtext-version>2.44.0</xtext-version>
 		<!-- Where Java files corresponding to the Hero DSL main files will be generated
 			by the xtext-maven-plugin -->
 		<hero-generated-sources>src/main/generated-sources/hero/</hero-generated-sources>
@@ -38,7 +38,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>3.6.1</version>
+				<version>3.6.2</version>
 				<executions>
 					<execution>
 						<id>add-sources</id>
